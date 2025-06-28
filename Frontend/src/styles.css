@@ -1,0 +1,457 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#root{
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Lista de clientes */
+
+.clienteList{
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  flex-wrap: wrap;
+  gap:.7rem;
+}
+
+.cliente {
+    width: 10rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    padding: .7rem;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: .5rem;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    transition: .5s;
+    font-weight: 700;
+}
+
+.cliente > p{
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cliente:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.8);
+}
+
+.buttons-cliente{
+  display: flex;
+  gap: .5rem
+}
+
+.btnMore {
+  padding: .5rem .2rem;
+  cursor: pointer;
+  border-radius: .5rem;
+  border: none;
+  background-color: rgb(60, 57, 246);
+  color: #fff;
+  font-weight: 500;
+  transition: .5s;
+  text-align: center;
+}
+
+.btnMore:hover{
+  background-color: rgb(34, 32, 142);
+}
+
+.deleteCliente{
+  padding: .5rem .2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: .5rem;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  font-weight: 500;
+  transition: .5s;
+  text-align: center;
+}
+
+.deleteCliente:hover{
+  background-color: rgb(148, 1, 1);
+}
+
+.personalInfos{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.individualPInfos > label{
+  font-weight: 600;
+  color: #000;
+}
+
+.individualPInfos > p {
+  font-size: 1.5rem;
+}
+
+.documents{
+  display: flex;
+  gap: 1.5rem;
+}
+
+.documentGroup, .phonesGroup{
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.individualDocument, .individualPhone{
+  border: .5px solid #000;
+  border-radius: .5rem;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+}
+
+.individualDocument > .documentType > label,
+.individualDocument > .documentDate > label,
+.individualPhone > label{
+  color: #000;
+  font-weight: 600;
+}
+
+.individualDocument > .documentType > p,
+.individualDocument > .documentDate > p,
+.individualPhone > p{
+  font-size: 1.1rem;
+}
+
+.individualDocument:hover, .individualPhone:hover{
+  transform: translateY(-10px);
+}
+
+.personal-consume{
+  display: flex;
+  gap: 2rem;
+}
+
+.consumed-products, .consumed-services{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: .5px solid #000;
+  padding: .5rem;
+  border-radius: .5rem;
+  height: auto;
+}
+
+.consumed-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.consumed-list > li {
+  list-style: decimal-leading-zero;
+}
+
+/* Formulário */
+.formCliente{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formInfos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+  gap: 1rem;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+.cliInfos{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: .5rem;
+}
+
+.cliInfos > div{
+  width: 20rem;
+}
+
+.cliInfos > div > label, .cli-newInfos > div > label{
+  font-weight: 600;
+  color: #000;
+}
+
+.cliInfos > div > input[type="text"],
+.cliInfos > div > input[type="email"],
+.cli-newInfos > div > input[type="text"]{
+  width: 100%;
+  padding: .2rem;
+  font-size: 1rem;
+}
+
+.cliInfos > div > input[type="text"]:focus,
+.cli-newInfos > div > input[type="text"]:focus,
+.cliInfos > div > input[type="email"]:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(8, 0, 255, 0.7);
+}
+
+.btnForm{
+  width: 9rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: none;
+  background-color: rgb(60, 57, 246);
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  transition: .5s;
+}
+
+.btnForm:hover{
+  background-color: rgb(34, 32, 142);
+}
+
+.datesDiv{
+  gap: 1rem;
+}
+
+/* Atualizar informações */
+.clienteUpdate{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  gap: 1rem;
+  width: 12rem;
+  height: 8rem;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+  transition: .5s;
+}
+
+.clienteUpdate:hover{
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.8);
+}
+
+.clienteInfo{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* height: 80%; */
+  font-weight: 600;
+}
+
+.clienteInfo > p {
+  max-width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btnUpdt{
+  padding: .5rem;
+  cursor: pointer;
+  border-radius: .5rem;
+  border: none;
+  background-color: rgb(60, 57, 246);
+  color: #fff;
+  font-weight: 700;
+  transition: .5s;
+}
+
+.btnUpdt:hover{
+  background-color: rgb(34, 32, 142);
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-content{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #f3f3f3;
+}
+
+.modal-body{
+  height: auto;
+  width: 100%;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.formUpdtCliente{
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.cli-newInfos{
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+}
+
+.input-infos{
+  width: 90%;
+}
+
+.editInfo{
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.RgInfos{
+  gap: 1rem;
+}
+
+.moreInfos{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 1.5rem;
+}
+
+.cli-addInfos{
+  gap: 1rem;
+  /* display: flex; */
+}
+
+.addNewBtn{
+  padding: .5rem;
+  cursor: pointer;
+  border-radius: .5rem;
+  background-color: rgb(60, 57, 246);
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  transition: .3s;
+  width: 15rem;
+}
+
+.addNewBtn:hover{
+  background-color: rgb(34, 32, 142);
+}
+
+.cli-addInfos{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cli-currentInfos{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%
+}
+
+.cli-addNewInfos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.cli-cpf{
+  cursor: not-allowed;
+}
+
+.close{
+  color: rgb(0, 0, 0);
+  float: right;
+  font-size: 2rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.edtCpf{
+  cursor: not-allowed
+}
+
+.cli-currentProdServ{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: .5rem;
+}
+
+.individualInfo{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.individal-prodServ{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 20rem;
+}
+
+@media screen and (min-width: 320px) and (max-width:426px) {
+  .formInfos{
+    width: 90%;
+  }
+
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .datesDiv{
+    flex-direction: column;
+  }
+}
